@@ -24,12 +24,11 @@ jobs:
       - *default_docker_ruby_executor
     steps:
       - run:
-        name: Dependabot Checker
-        command: |
-          echo Running test
-          echo $PWD
-          echo $PWD
-        working_directory: ~/
+          name: Dependabot Checker
+          command: |
+            echo $PWD
+            echo $PWD
+            echo $PWD
       - checkout
       # Which version of bundler?
       - run:
