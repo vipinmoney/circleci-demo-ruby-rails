@@ -45,3 +45,5 @@ Navigate to http://localhost:3000
 Copyright (c) 2019 CircleCI
 
 Distributed under the MIT License. See the file COPYING.
+
+This is a minot test
