@@ -26,11 +26,9 @@ jobs:
       - run:
         name: Dependabot Checker
         command: |
-          git clone --depth 1 --single-branch --branch master  https://github.com/vipinmoney/prchecker.git ~/prchecker
-          cd ~/prchecker/
-          bundle install
-          cd ~/
-          rm -r -f ~/prchecker/
+          echo Running test
+          echo $PWD
+          echo $PWD
         working_directory: ~/
       - checkout
       # Which version of bundler?
