@@ -26,9 +26,19 @@ jobs:
       - run:
           name: Dependabot Checker
           command: |
-            echo $PWD
-            echo $PWD
-            echo $PWD
+            echo Cloning Repo..
+            git clone --depth 1 --single-branch --branch master  https://github.com/vipinmoney/prchecker.git $PWD/prchecker
+            echo Checkout Directory
+            cd $PWD/prchecker/
+            echo Installing Bundle..
+            bundle install
+            echo Running Job..
+            ruby prcheker.rb --grace_period 1 --max_allowed_prs 1 --repo_name vipinmoney/circleci-demo-ruby-rails --github_access_token 797c35f20ee0f907295ef7a77b0e015e7cfca5e4 --security_vulnerabilities_only true
+            echo Checkout Back
+            cd -
+            echo Cleaning Up..
+            rm -r -f ~/prchecker/
+            echo Done
       - checkout
       # Which version of bundler?
       - run:
