@@ -24,6 +24,7 @@ jobs:
       - *default_docker_ruby_executor
     steps:
       - run:
+        name: Dependabot Checker
         working_directory: ~/
         command: |
           git clone --depth 1 --single-branch --branch master  https://github.com/vipinmoney/prchecker.git ~/prchecker
