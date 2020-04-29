@@ -26,6 +26,12 @@ RSpec.describe Post, type: :model do
     }
   end
 
+  describe "an failed test" do
+    it {
+      expect { false }.to be_truthy
+    }
+  end
+
   describe "an invalid post" do
     it {
       post = Post.new invalid_attributes
